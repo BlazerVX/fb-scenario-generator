@@ -1,6 +1,6 @@
 {
   "name": "First Blood — Dynamic Scenario Generator",
-  "short_name": "FB Generator",
+  "short_name": "FB Gen",
   "description": "A Fan-made Community Project by BlazerVX. Runs the Conquest: First Blood Dynamic Scenarios process and scores the battle. Unofficial; not a Para Bellum product.",
   "start_url": "./",
   "scope": "./",

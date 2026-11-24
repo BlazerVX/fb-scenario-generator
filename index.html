@@ -134,7 +134,9 @@ section[hidden]{display:none}
 /* ---------- dice ---------- */
 .tray{background:var(--p1);border:1px solid var(--ln);padding:10px;margin:8px 0}
 .tray-l{font-family:var(--head);letter-spacing:.04em;font-size:.95rem;color:var(--red);margin-bottom:6px}
-.faces{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.faces{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.tray{box-sizing:border-box;max-width:100%;min-width:0}
+.face{min-width:0;padding:0;box-sizing:border-box}
 .face{aspect-ratio:1;border:1px solid var(--ln);background:rgba(255,255,255,.5);font-size:1.5rem;color:var(--ink);min-height:44px;border-radius:6px}
 .face.on{background:var(--red);color:#fff;border-color:#4d0b0e}
 .roll{margin-top:8px;width:100%;border:1px dashed var(--mu);background:transparent;padding:9px;font-family:var(--head);letter-spacing:.06em;font-size:.95rem;color:var(--mu)}

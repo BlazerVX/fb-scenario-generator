@@ -22,7 +22,7 @@ After the first visit it works **fully offline** (handy in a game store with no 
 
 Games save on your device only. Nothing is sent anywhere.
 
-The app icon is an Old Dominion miniature from Para Bellum, painted by BlazerVX.
+The app icon is an Old Dominion miniature from Para Bellum, painted by Marg (@margzorz).
 
 ## What's inside
 
@@ -31,7 +31,7 @@ The app icon is an Old Dominion miniature from Para Bellum, painted by BlazerVX.
 | `index.html` | The whole app (rules data, maps and art are embedded) |
 | `manifest.webmanifest` | Makes it installable (name, icon, colours) |
 | `sw.js` | Service worker: offline support and updates |
-| `icons/` | Home-screen icons (BlazerVX's painted Old Dominion skull) |
+| `icons/` | Home-screen icons (Old Dominion skull painted by Marg, @margzorz) |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
 
 ## Updating
@@ -44,4 +44,5 @@ The app icon is an Old Dominion miniature from Para Bellum, painted by BlazerVX.
 
 - App design and code: **BlazerVX** (Para Bellum Vanguard)
 - Inspired by **PTWookie**'s original First Blood scenario generator
+- App icon: Old Dominion miniature painted by **Marg (@margzorz)**
 - Scenario rules, maps and artwork: © Para Bellum Wargames, used with permission as fan-made community content

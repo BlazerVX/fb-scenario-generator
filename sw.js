@@ -1,7 +1,7 @@
 /* First Blood — Dynamic Scenario Generator · offline service worker
    A Fan-made Community Project by BlazerVX.
    Bump VERSION whenever index.html changes so phones pick up the update. */
-const VERSION = 'fbgen-v1.0.5';
+const VERSION = 'fbgen-v1.0.6';
 const SHELL = [
   './',
   './index.html',

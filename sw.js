@@ -1,11 +1,12 @@
 /* First Blood — Dynamic Scenario Generator · offline service worker
    A Fan-made Community Project by BlazerVX.
    Bump VERSION whenever index.html changes so phones pick up the update. */
-const VERSION = 'fbgen-v1.0.2';
+const VERSION = 'fbgen-v1.0.3';
 const SHELL = [
   './',
   './index.html',
   './manifest.webmanifest',
+  './manifest.webmanifest?v=103',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
@@ -14,7 +15,7 @@ const SHELL = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
@@ -52,8 +53,13 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Everything else from this site: cache first.
+  // Everything else from this site: network first (so renames and new icons arrive), cache when offline.
   if (url.origin === location.origin) {
-    e.respondWith(caches.match(req).then(hit => hit || fetch(req)));
+    e.respondWith(
+      fetch(req).then(res => {
+        if (res.ok) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); }
+        return res;
+      }).catch(() => caches.match(req, { ignoreSearch: true }))
+    );
   }
 });
